@@ -23,3 +23,10 @@ Now to add this to my proxmox.
 <img width="989" height="170" alt="image" src="https://github.com/user-attachments/assets/88328e36-649d-48b4-bb0e-69b873b4f04f" />
 
 These commands are how i added these ssds to my lvm in proxmox.
+
+
+So a way easier way to add ssds is to actually just use the web interface.
+
+<img width="1715" height="435" alt="image" src="https://github.com/user-attachments/assets/3d74e467-e7d8-4dd7-84b6-ed46f76d01cc" />
+
+Is this photo, I added a new ssd which is shown by /dev/sdd (hard drive d). To do this make sure to select your node Scroll down and select disk to find any added disk. To set it up all you have to do is click the new ssd and select wipe disk at the top. 
