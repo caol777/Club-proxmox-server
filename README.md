@@ -30,3 +30,32 @@ So a way easier way to add ssds is to actually just use the web interface.
 <img width="1715" height="435" alt="image" src="https://github.com/user-attachments/assets/3d74e467-e7d8-4dd7-84b6-ed46f76d01cc" />
 
 Is this photo, I added a new ssd which is shown by /dev/sdd (hard drive d). To do this make sure to select your node Scroll down and select disk to find any added disk. To set it up all you have to do is click the new ssd and select wipe disk at the top. 
+
+
+Right now this is what the server is currently looking like.
+
+<img width="310" height="424" alt="image" src="https://github.com/user-attachments/assets/1f95c8db-59be-4f9d-9240-8526a9cc545e" />
+
+In this we joined another server as a cluster which was pretty simple. All you really had to do was select the existing data center at the top and go to this screen.
+<img width="1919" height="307" alt="image" src="https://github.com/user-attachments/assets/67acd3a4-43f1-4193-b581-c2bb5f6af561" />
+
+After coming here you would click create cluster then copy the information code into the your other proxmox server when you click join cluster on that server.
+
+As you can see, there is a lot more stuff in both nodes. We have local and local-lvm which serve as our default space for machines and iso images. We also have ssd-snapshots for quick roll backs and box resets as well as extra space for any machines. We also have templates for our automation scripts. Lastly, we have Backups which will be our primary (Hopefully) iso and backup image storage.
+
+<img width="174" height="145" alt="image" src="https://github.com/user-attachments/assets/587a41ea-f54c-4000-9cdf-9efc11f5e42e" />
+
+Here are the different places you can format your disk to. LVM is the default and uses to run the containers/virtual machines. Directory seems to be a jack of all trades. and the others we dont use (not yet).
+
+If i wanted to create a new lvm-thin i would do this
+<img width="1581" height="663" alt="image" src="https://github.com/user-attachments/assets/04012572-0278-418d-8315-0bd60cddd31d" />
+
+Obviously, here i dont have another ssd but this is just to show how to create them. To edit these, you would go to datacenter > storage > and then select which one you want to remove, add or edit.
+
+<img width="1919" height="339" alt="image" src="https://github.com/user-attachments/assets/c45ad6c7-4935-40ac-a5b5-11f123783d79" />
+
+
+Now on to automation
+
+
+
