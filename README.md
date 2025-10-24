@@ -60,3 +60,4 @@ Now on to automation
 https://adaptable-april-ff0.notion.site/actually-doing-evan-s-lab-a44ac1a906a74b5abd0b72062454da6c
 
 
+https://login.tailscale.com/a/1b05fa43017790
