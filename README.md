@@ -8,7 +8,7 @@ I then set up the LAN in /etc/network/interfaces. This LAN (192.168.1) will be u
 <img width="564" height="341" alt="image" src="https://github.com/user-attachments/assets/ebce37cb-8025-432b-9ce3-f0d7d4db99e5" />
 
 
-Now its time to install a pfsense iso and create a vm with 2gb of ram, 16 gigs of storage and 4 cores. Also make sure to have a network device bridge for both your WAN and LAN netwokr interfaces.
+Now its time to install a pfsense iso and create a vm with 2gb of ram, 16 gigs of storage and 1 core. Also make sure to have a network device bridge for both your WAN and LAN netwokr interfaces.
 
 <img width="717" height="390" alt="image" src="https://github.com/user-attachments/assets/6b4c78b2-13ef-4f70-a7a6-d2d56b1f8282" />
 
