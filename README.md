@@ -57,5 +57,6 @@ Obviously, here i dont have another ssd but this is just to show how to create t
 
 Now on to automation
 
+https://adaptable-april-ff0.notion.site/actually-doing-evan-s-lab-a44ac1a906a74b5abd0b72062454da6c
 
 
