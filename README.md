@@ -54,6 +54,22 @@ Obviously, here i dont have another ssd but this is just to show how to create t
 
 <img width="1919" height="339" alt="image" src="https://github.com/user-attachments/assets/c45ad6c7-4935-40ac-a5b5-11f123783d79" />
 
+So actually we set up a tailscale vpn instead so we can all work on this at home. Its running off of a container in the proxmox server that is advertising the server subnet across the vpn connection. 
+
+To set that up you would run this command on the proxmox root shell (not the container)
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/community-scripts/ProxmoxVE/main/tools/addon/add-tailscale-lxc.sh)" 
+Press space when you get the selection screen to select your container and then enter. 
+
+After you set that up. Use tailscale up to print the link and make sure to connect that machine to your tailscale by signing into your account with the link that prints in the shell
+
+<img width="539" height="117" alt="image" src="https://github.com/user-attachments/assets/51743c21-054e-4081-b200-fbae09036e1f" />
+
+After that use these commands to allow the entire subnet of the server to be exposed 
+
+<img width="632" height="95" alt="image" src="https://github.com/user-attachments/assets/381fcd04-0a51-47e1-b626-a8b58d7cf76d" />
+
+Then enable the subnet on ur tailscale admin console.
+
 
 Now on to automation
 
