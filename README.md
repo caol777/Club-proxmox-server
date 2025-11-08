@@ -56,6 +56,21 @@ Obviously, here i dont have another ssd but this is just to show how to create t
 
 So actually we set up a tailscale vpn instead so we can all work on this at home. Its running off of a container in the proxmox server that is advertising the server subnet across the vpn connection. 
 
+Before i get into the vpn setup make sure to setup your repositories correctly.
+<img width="1453" height="559" alt="image" src="https://github.com/user-attachments/assets/8bfd4f3b-b419-48b1-be99-ae1a52a0fbf3" />
+
+Since we are using a free version of proxmox we arent getting enterprise updates. This causes our machine to not get updates at all so to fix that we need to disable the enterprise ones and get free repos.
+
+There are two ways to do this. 
+
+The CLI way through /etc/sources.list
+<img width="623" height="337" alt="image" src="https://github.com/user-attachments/assets/684fa297-a35f-4326-b566-4b77ca0f789a" />
+
+Or through the web UI
+<img width="1607" height="715" alt="image" src="https://github.com/user-attachments/assets/04501dd9-5376-4ac3-b379-4f866d21f14e" />
+
+For the web ui, all you have to do is disable any enterprise repos and add the no-subscription repo.
+
 To set that up you would run this command on the proxmox root shell (not the container)
 bash -c "$(curl -fsSL https://raw.githubusercontent.com/community-scripts/ProxmoxVE/main/tools/addon/add-tailscale-lxc.sh)" 
 Press space when you get the selection screen to select your container and then enter. 
