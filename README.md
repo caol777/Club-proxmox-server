@@ -85,6 +85,7 @@ After that use these commands to allow the entire subnet of the server to be exp
 
 Then enable the subnet on ur tailscale admin console.
 
+for any issues with joining servers to your cluster make sure to use nano to edit the /etc/pve/corosync.conf and delete your node manually.
 
 Now on to automation
 
