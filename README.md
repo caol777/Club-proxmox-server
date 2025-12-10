@@ -87,6 +87,11 @@ Then enable the subnet on ur tailscale admin console.
 
 for any issues with joining servers to your cluster make sure to use nano to edit the /etc/pve/corosync.conf and delete your node manually.
 
+## Setting up WRCCDC environments.  
+
+Using this command you will be able to download all of the images. 
+`` wget -r -np -nd -A "*.vmz,*.vma.gz" https://archive.wrccdc.org/images/2026/wrccdc-2026-invitationals-2/ ``
+
 Now on to automation
 
 https://adaptable-april-ff0.notion.site/actually-doing-evan-s-lab-a44ac1a906a74b5abd0b72062454da6c
