@@ -92,6 +92,8 @@ for any issues with joining servers to your cluster make sure to use nano to edi
 Using this command you will be able to download all of the images. 
 `` wget -r -np -nd -A "*.vmz,*.vma.gz" https://archive.wrccdc.org/images/2026/wrccdc-2026-invitationals-2/ ``
 
+After downloading all of the files do `` mv [old file name] [new file name.vma]`` It needs a to be .vma to be recognized by proxmox.
+
 Now on to automation
 
 https://adaptable-april-ff0.notion.site/actually-doing-evan-s-lab-a44ac1a906a74b5abd0b72062454da6c
