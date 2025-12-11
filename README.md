@@ -89,10 +89,63 @@ for any issues with joining servers to your cluster make sure to use nano to edi
 
 ## Setting up WRCCDC environments.  
 
-Using this command you will be able to download all of the images. 
+Using this command you will be able to download all of the images in your chosen drive's dump directory (/mnt/pve/Storage/dump/ or /var/lib/vz/dump/ (Default storage for local). 
 `` wget -r -np -nd -A "*.vmz,*.vma.gz" https://archive.wrccdc.org/images/2026/wrccdc-2026-invitationals-2/ ``
 
 After downloading all of the files do `` mv [old file name] [new file name.vma]`` It needs a to be .vma to be recognized by proxmox.
+
+to set them up you have to first extract the server information from the vma file using ``vma extract -v [filename.vma] /tmp/[insert a new directory] `` Doing this extracts the server config file and a hard disk file for your vm.
+
+After this i used this script to basically provission and set up the vm
+
+```
+#!/bin/bash
+
+# 1. DEFINE VARIABLES
+TARGET="/tmp/restore-trex"
+
+# Trex Settings (Matches your screenshot)
+VMID=10006
+NAME="team00-trex"
+MAC="BC:24:11:95:93:3B"
+IP="192.168.220.12/24"
+STORAGE="local-lvm"
+
+# 2. CREATE VM SHELL
+echo "Creating VM $VMID ($NAME)..."
+qm create $VMID \
+  --name $NAME \
+  --memory 4096 --cores 2 --sockets 1 --numa 0 \
+  --cpu x86-64-v2-AES \
+  --ostype win10 \
+  --agent 1 \
+  --scsihw virtio-scsi-single \
+  --net0 virtio,bridge=vmbr0,macaddr=$MAC
+
+# 3. IMPORT DISK
+echo "Importing disk from $TARGET..."
+qm importdisk $VMID "$TARGET/disk-drive-scsi0.raw" $STORAGE
+
+# 4. ATTACH DISK & BOOT SETTINGS
+qm set $VMID --scsi0 $STORAGE:vm-$VMID-disk-0
+qm set $VMID --boot order=scsi0
+
+# 5. CLOUD-INIT SETTINGS
+echo "Configuring Network..."
+qm set $VMID --ide2 $STORAGE:cloudinit
+qm set $VMID --ipconfig0 ip=$IP,gw=192.168.220.2
+# Nameserver is set to localhost because THIS machine is the DNS server
+qm set $VMID --nameserver 127.0.0.1
+qm set $VMID --ciuser Administrator
+qm set $VMID --cipassword 'OMGATREX1?'
+
+# 6. START
+echo "Starting VM..."
+qm start $VMID
+echo "Done! Trex is running."
+
+```
+
 
 Now on to automation
 
