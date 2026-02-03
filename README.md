@@ -173,6 +173,12 @@ iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
 
 This command does that.
 
+
+<img width="1231" height="467" alt="image" src="https://github.com/user-attachments/assets/3a35b398-7b02-4ec3-8f96-09888655267c" />
+
+Make a container and install tailscale on it. Set up the netwokr interfaces to have the WAN from the router (Actual WIFI) and the LAN for the competition envrionment. After thats done set up tailscale and advertise the LAN. This should simulate 1:1 NAT
+
+
 Now on to automation
 
 https://adaptable-april-ff0.notion.site/actually-doing-evan-s-lab-a44ac1a906a74b5abd0b72062454da6c
