@@ -164,6 +164,9 @@ After its restored, it may not start because of the it will introduce a new netw
 
 When you run iptables -t nat -L -n -v You will see a NETMAP section in the post routing section. That is to Set up 1:1 NAT. Sadly we cant get it working so if you see it remove it.
 
+iptables -t nat -D POSTROUTING [Line Number]
+
+
 After doing that we need to add a MASQUERADE rule to push all of the public network connectivity to the LAN
 
 iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
