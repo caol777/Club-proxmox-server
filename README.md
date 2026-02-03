@@ -158,7 +158,7 @@ Here you will be able to see the files you uploaded and if you click restore and
 
 After its restored, it may not start because of the it will introduce a new network bridge to the system. All you have to do is setup a new LINUX network bridge
 
-
+(COME BACK TO THIS
 
 <img width="1012" height="124" alt="image" src="https://github.com/user-attachments/assets/26afc5e2-ae0b-4afa-b339-cb45baaa9ac4" />
 
@@ -178,6 +178,7 @@ This command does that.
 
 Make a container and install tailscale on it. Set up the netwokr interfaces to have the WAN from the router (Actual WIFI) and the LAN for the competition envrionment. After thats done set up tailscale and advertise the LAN. This should simulate 1:1 NAT
 
+sudo tailscale up --advertise-routes=192.168.220.0/24 The command to start tailscale and advertise the subnet
 
 Now on to automation
 
