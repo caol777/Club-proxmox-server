@@ -145,6 +145,18 @@ qm start $VMID
 echo "Done! Trex is running."
 
 ```
+Other way to set up the images would be to install them as .vma/.vma.zst  
+
+If you go to the directory the were uploaded (/mnt/pve/Storage/dump in my case) You will be able to select an option in the web UI called Backups
+
+<img width="239" height="212" alt="image" src="https://github.com/user-attachments/assets/787793e6-cf2e-4249-801e-2054e354d244" />
+
+
+Here you will be able to see the files you uploaded and if you click restore and select the storage (Where the vms will run) you will be able to run the virtual machines.
+
+<img width="636" height="188" alt="image" src="https://github.com/user-attachments/assets/89d94083-b17b-4cdb-8ed4-c2278d11a112" />
+
+
 
 
 Now on to automation
