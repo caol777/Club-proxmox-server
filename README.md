@@ -159,6 +159,11 @@ Here you will be able to see the files you uploaded and if you click restore and
 After its restored, it may not start because of the it will introduce a new network bridge to the system. All you have to do is setup a new LINUX network bridge
 
 
+
+<img width="1012" height="124" alt="image" src="https://github.com/user-attachments/assets/26afc5e2-ae0b-4afa-b339-cb45baaa9ac4" />
+
+When you run iptables -t nat -L -n -v You will see a NETMAP section in the post routing section. That is to Set up 1:1 NAT. Sadly we cant get it working so if you see it remove it.
+
 Now on to automation
 
 https://adaptable-april-ff0.notion.site/actually-doing-evan-s-lab-a44ac1a906a74b5abd0b72062454da6c
