@@ -156,7 +156,7 @@ Here you will be able to see the files you uploaded and if you click restore and
 
 <img width="636" height="188" alt="image" src="https://github.com/user-attachments/assets/89d94083-b17b-4cdb-8ed4-c2278d11a112" />
 
-
+After its restored, it may not start because of the it will introduce a new network bridge to the system. All you have to do is setup a new LINUX network bridge
 
 
 Now on to automation
