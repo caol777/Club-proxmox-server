@@ -178,7 +178,18 @@ This command does that.
 
 Make a container and install tailscale on it. Set up the netwokr interfaces to have the WAN from the router (Actual WIFI) and the LAN for the competition envrionment. After thats done set up tailscale and advertise the LAN. This should simulate 1:1 NAT
 
-Make sure to also add net.ipv4.ip_forward = 1 to your /etc/sysctl.conf in your container so that the vpn bridge can work
+Make sure to also add net.ipv4.ip_forward = 1 to your /etc/sysctl.conf and do sysctl -p to apply this in your container so that the vpn bridge can work
+
+Another set is to Configure the containers permission file that would be found on the proxmox server host node 
+
+nano /etc/pve/lxc/105.conf This is based off of ur container ID.
+
+<img width="1158" height="341" alt="image" src="https://github.com/user-attachments/assets/b2f8e701-32e0-4037-bfcb-d58321e58eba" />
+
+lxc.cgroup2.devices.allow: c 10:200 rwm
+lxc.mount.entry: /dev/net/tun dev/net/tun none bind,create=file
+
+Make sure to add these lines in the confiuration file and reboot the container.
 
 sudo tailscale up --advertise-routes=192.168.220.0/24 The command to start tailscale and advertise the subnet
 
