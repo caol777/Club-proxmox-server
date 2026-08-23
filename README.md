@@ -268,4 +268,3 @@ Automation notes and lab-provisioning work are documented separately here:
 
 - [Lab automation notes (Notion)](https://adaptable-april-ff0.notion.site/actually-doing-evan-s-lab-a44ac1a906a74b5abd0b72062454da6c)
 
-> **Heads up:** the original README ended with a live Tailscale login link (`login.tailscale.com/a/1b05fa43017790`). Those links authenticate a device to your tailnet, so I've left it out here. Remove it from the live repo if it's still there.
